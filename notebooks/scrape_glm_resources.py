@@ -16,14 +16,13 @@ Sources:
   4. NAIC regulatory guidance on GLMs
   5. Academic papers (Tweedie, credibility-GLM, freq-sev, reserving)
   6. Lecture notes & textbook chapters
-  7. Datasets (freMTPL2, CASdatasets, Schedule P)
-  8. Reference pages (Wikipedia, IFoA, SSRN, ASTIN Bulletin)
+  7. Reference pages (Wikipedia, IFoA, SSRN, ASTIN Bulletin)
 """
 
 import json
 import tempfile
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from io import BytesIO
 from urllib.error import HTTPError as URLLibHTTPError
 
@@ -36,7 +35,7 @@ from loguru import logger
 # COMMAND ----------
 
 VOLUME_PATH = "/Volumes/glam/bronze/raw_actuarial_docs"
-SCRAPE_TS = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+SCRAPE_TS = datetime.now(UTC).strftime("%Y%m%dT%H%M%SZ")
 HEADERS = {"User-Agent": "GLAMBot/1.0 (actuarial-research)"}
 TIMEOUT = 60
 
@@ -45,6 +44,15 @@ w = WorkspaceClient()
 # COMMAND ----------
 
 # --- Helpers ---
+
+
+def file_exists(path: str) -> bool:
+    """Check if a file already exists in the volume."""
+    try:
+        w.files.get_status(path)
+        return True
+    except Exception:  # noqa: BLE001
+        return False
 
 
 def upload_bytes(content: bytes, dest_path: str) -> None:
@@ -71,6 +79,14 @@ def save_metadata(records: list[dict], name: str) -> None:
 
 
 def download_pdf(url: str, dest: str, name: str) -> dict | None:
+    if file_exists(dest):
+        logger.info(f"  SKIP (exists) {name}")
+        return {
+            "name": name,
+            "url": url,
+            "volume_path": dest,
+            "skipped": True,
+        }
     try:
         resp = requests.get(url, timeout=TIMEOUT, headers=HEADERS)
         resp.raise_for_status()
@@ -86,16 +102,7 @@ def download_pdf(url: str, dest: str, name: str) -> dict | None:
     }
 
 
-def download_page(
-    url: str, name: str, category: str
-) -> dict | None:
-    try:
-        resp = requests.get(url, timeout=TIMEOUT, headers=HEADERS)
-        resp.raise_for_status()
-    except requests.RequestException as e:
-        logger.warning(f"  FAILED {name}: {e}")
-        return None
-
+def download_page(url: str, name: str, category: str) -> dict | None:
     safe = (
         name.lower()
         .replace(" ", "_")
@@ -104,6 +111,24 @@ def download_page(
         .replace(":", "")
     )[:80]
     html_dest = f"{VOLUME_PATH}/html/{category}/{safe}.html"
+
+    if file_exists(html_dest):
+        logger.info(f"  SKIP (exists) {name}")
+        return {
+            "name": name,
+            "url": url,
+            "category": category,
+            "html_path": html_dest,
+            "skipped": True,
+        }
+
+    try:
+        resp = requests.get(url, timeout=TIMEOUT, headers=HEADERS)
+        resp.raise_for_status()
+    except requests.RequestException as e:
+        logger.warning(f"  FAILED {name}: {e}")
+        return None
+
     upload_bytes(resp.content, html_dest)
 
     soup = BeautifulSoup(resp.content, "html.parser")
@@ -126,14 +151,28 @@ def download_page(
 
 # Keywords that indicate a paper is actually about actuarial GLMs
 GLM_KEYWORDS = {
-    "generalized linear model", "generalised linear model",
-    "glm", "tweedie", "poisson regression", "gamma regression",
-    "frequency-severity", "frequency severity",
-    "claim frequency", "claim severity", "pure premium",
-    "insurance pricing", "insurance rating", "ratemaking",
-    "loss reserving", "claims reserving", "chain ladder",
-    "credibility", "tariff", "non-life insurance",
-    "general insurance", "actuarial",
+    "generalized linear model",
+    "generalised linear model",
+    "glm",
+    "tweedie",
+    "poisson regression",
+    "gamma regression",
+    "frequency-severity",
+    "frequency severity",
+    "claim frequency",
+    "claim severity",
+    "pure premium",
+    "insurance pricing",
+    "insurance rating",
+    "ratemaking",
+    "loss reserving",
+    "claims reserving",
+    "chain ladder",
+    "credibility",
+    "tariff",
+    "non-life insurance",
+    "general insurance",
+    "actuarial",
 }
 
 
@@ -190,13 +229,16 @@ for query in ARXIV_QUERIES:
             safe_id = paper_id.replace("/", "_").replace(".", "_")
             dest = f"{VOLUME_PATH}/pdfs/arxiv/{safe_id}.pdf"
 
-            try:
-                with tempfile.TemporaryDirectory() as tmpdir:
-                    pdf_path = result.download_pdf(dirpath=tmpdir)
-                    upload_file(str(pdf_path), dest)
-            except (URLLibHTTPError, Exception) as e:
-                logger.warning(f"    PDF download failed for {paper_id}: {e}")
-                continue
+            if file_exists(dest):
+                logger.info(f"  SKIP (exists) {result.title}")
+            else:
+                try:
+                    with tempfile.TemporaryDirectory() as tmpdir:
+                        pdf_path = result.download_pdf(dirpath=tmpdir)
+                        upload_file(str(pdf_path), dest)
+                except (URLLibHTTPError, Exception) as e:
+                    logger.warning(f"    PDF download failed for {paper_id}: {e}")
+                    continue
 
             meta = {
                 "id": paper_id,
@@ -232,7 +274,7 @@ CAS_PDFS = [
         "url": "https://www.casact.org/sites/default/files/2021-01/05-Goldburd-Khare-Tevet.pdf",
     },
     {
-        "name": "CAS Monograph 3 - Stochastic Loss Reserving Using GLMs (Taylor, McGuire)",
+        "name": "CAS Mono 3 - Stochastic Loss Reserving GLMs (Taylor, McGuire)",
         "url": "https://www.casact.org/sites/default/files/2021-03/7_Taylor.pdf",
     },
     {
@@ -307,7 +349,7 @@ SOA_PDFS = [
         "url": "https://www.soa.org/globalassets/assets/files/research/projects/research-pred-mod-life-batty.pdf",
     },
     {
-        "name": "SOA - Emerging Data Analytics Techniques with Actuarial Applications (2019)",
+        "name": "SOA - Emerging Data Analytics Techniques Actuarial (2019)",
         "url": "https://www.soa.org/globalassets/assets/files/resources/research-report/2019/emerging-analytics-techniques-applications.pdf",
     },
     {
@@ -377,7 +419,7 @@ logger.info("=== 5. Academic papers ===")
 
 ACADEMIC_PDFS = [
     {
-        "name": "Fitting Tweedies Compound Poisson Model to Insurance Claims (Smyth, Jorgensen) - ASTIN",
+        "name": "Tweedie Compound Poisson Insurance Claims (Smyth, Jorgensen)",
         "url": "https://www.casact.org/sites/default/files/old/astin_vol32no1_143.pdf",
     },
     {
@@ -385,7 +427,7 @@ ACADEMIC_PDFS = [
         "url": "https://files01.core.ac.uk/download/pdf/211518053.pdf",
     },
     {
-        "name": "Introducing Credibility Theory into GLMs for Ratemaking (Institut des Actuaires)",
+        "name": "Credibility Theory into GLMs for Ratemaking (Inst Actuaires)",
         "url": "https://www.institutdesactuaires.com/docs/mem/090520123b7c578732a63f686535dcaa.pdf",
     },
     {
@@ -433,19 +475,19 @@ ACADEMIC_PDFS = [
         "url": "https://formacion.actuarios.org/wp-content/uploads/2024/05/2-PC-Pricing-in-the-Age-of-Machine-Learning-Jan-2024.pdf",
     },
     {
-        "name": "Fitting Tweedies Compound Poisson Model - Cambridge Core (Smyth, Jorgensen)",
+        "name": "Tweedie Compound Poisson - Cambridge Core (Smyth, Jorgensen)",
         "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DEF0B49F96FC015C7FBE076BC0A5C3AC/S051503610001299Xa.pdf/div-class-title-fitting-tweedie-s-compound-poisson-model-to-insurance-claims-data-dispersion-modelling-div.pdf",
     },
     {
-        "name": "Neural Networks for Insurance Pricing - Benchmark Study (arXiv 2310.12671)",
+        "name": "Neural Nets Insurance Pricing Benchmark (arXiv 2310.12671)",
         "url": "https://arxiv.org/pdf/2310.12671",
     },
     {
-        "name": "Towards Explainability of ML Models in Insurance Pricing (arXiv 2003.10674)",
+        "name": "Explainability of ML in Insurance Pricing (arXiv 2003.10674)",
         "url": "https://arxiv.org/pdf/2003.10674",
     },
     {
-        "name": "Comparison of Offset and Ratio Weighted Regressions in Tweedie (arXiv 2502.11788)",
+        "name": "Offset vs Ratio Weighted Tweedie Regressions (arXiv 2502.11788)",
         "url": "https://arxiv.org/pdf/2502.11788",
     },
 ]
@@ -475,7 +517,7 @@ logger.info("=== 6. Lecture notes & textbook chapters ===")
 
 LECTURE_PDFS = [
     {
-        "name": "Insurance Pricing Analytics - Lecture Sheets (Katrien Antonio, KU Leuven)",
+        "name": "Insurance Pricing Analytics Lectures (Antonio, KU Leuven)",
         "url": "https://katrienantonio.github.io/PE-pricing-analytics/sheets/pricing_analytics_lecture_sheets_in_pdf.pdf",
     },
     {
@@ -545,7 +587,7 @@ logger.info(f"Lectures complete: {len(lecture_metadata)} resources")
 # 7. Reference pages
 # ============================================================
 
-logger.info("=== 8. Reference pages ===")
+logger.info("=== 7. Reference pages ===")
 
 REFERENCE_PAGES = [
     {
@@ -605,7 +647,7 @@ REFERENCE_PAGES = [
         "url": "https://eforum.casact.org/article/83925-glm-for-dummies-and-actuaries",
     },
     {
-        "name": "Wuthrich & Merz - Statistical Foundations of Actuarial Learning (Springer)",
+        "name": "Wuthrich & Merz - Statistical Foundations Actuarial Learning",
         "url": "https://link.springer.com/book/10.1007/978-3-031-12409-9",
     },
     {
