@@ -1,0 +1,471 @@
+[
+  {
+    "name": "freMTPL2freq (French Motor Third-Party Liability - Frequency)",
+    "url": "https://www.kaggle.com/datasets/floser/french-motor-claims-datasets-fremtpl2freq",
+    "type": "html",
+    "category": "dataset",
+    "description": "677,991 French motor TPL policies with claim counts, exposure, driver age, vehicle power, bonus-malus, region, density, and other risk features. The standard benchmark for insurance pricing GLMs. Also available via OpenML (data_id=41214) and sklearn.datasets.fetch_openml."
+  },
+  {
+    "name": "freMTPL2sev (French Motor Third-Party Liability - Severity)",
+    "url": "https://www.openml.org/d/41215",
+    "type": "html",
+    "category": "dataset",
+    "description": "Companion severity dataset to freMTPL2freq containing individual claim amounts (ClaimAmount) keyed by IDpol. Used together with the frequency data for pure premium modeling. Available via OpenML (data_id=41215) and sklearn.datasets.fetch_openml."
+  },
+  {
+    "name": "freMTPL2freq on OpenML",
+    "url": "https://www.openml.org/d/41214",
+    "type": "html",
+    "category": "dataset",
+    "description": "OpenML mirror of freMTPL2freq dataset (data_id=41214). Directly loadable in Python via sklearn.datasets.fetch_openml(data_id=41214, as_frame=True)."
+  },
+  {
+    "name": "scikit-learn Tweedie Regression on Insurance Claims Example",
+    "url": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_tweedie_regression_insurance_claims.html",
+    "type": "html",
+    "category": "github",
+    "description": "Official scikit-learn tutorial demonstrating TweedieRegressor on freMTPL2 data. Shows frequency, severity, and pure premium GLM modeling with Poisson, Gamma, and Tweedie distributions. Includes full pipeline with ColumnTransformer."
+  },
+  {
+    "name": "Medical Cost Personal Dataset (Insurance Charges)",
+    "url": "https://www.kaggle.com/datasets/mirichoi0218/insurance",
+    "type": "html",
+    "category": "dataset",
+    "description": "1,338 records of US health insurance beneficiaries with age, sex, BMI, children, smoker status, region, and medical charges. From 'Machine Learning with R' by Brett Lantz. Widely used for introductory regression modeling."
+  },
+  {
+    "name": "Car Insurance Claim Data",
+    "url": "https://www.kaggle.com/datasets/xiaomengsun/car-insurance-claim-data",
+    "type": "html",
+    "category": "dataset",
+    "description": "Car insurance claim dataset with risk features for modeling claim propensity. Contains policyholder and vehicle characteristics. ~387 KB compressed."
+  },
+  {
+    "name": "Car Insurance Data (Classification)",
+    "url": "https://www.kaggle.com/datasets/sagnik1511/car-insurance-data",
+    "type": "html",
+    "category": "dataset",
+    "description": "Annual car insurance data with 19 features for binary classification (claimed/not claimed). Mix of real and synthetic data, well-balanced. Suitable for claim propensity modeling."
+  },
+  {
+    "name": "Auto Insurance Claims Data",
+    "url": "https://www.kaggle.com/datasets/buntyshah/auto-insurance-claims-data",
+    "type": "html",
+    "category": "dataset",
+    "description": "Auto insurance claims dataset with policyholder, vehicle, and claim details. ~69 KB. Useful for claims analysis and fraud detection modeling."
+  },
+  {
+    "name": "CASdatasets (R package)",
+    "url": "https://cran.r-project.org/web/packages/CASdatasets/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "Comprehensive R package from the Casualty Actuarial Society containing dozens of insurance datasets including freMTPL (French motor TPL), freHSCM (French health), ausautoBI (Australian auto bodily injury), beMTPL (Belgian motor TPL), noMTPL (Norwegian motor TPL), and many more. The primary source for actuarial teaching datasets."
+  },
+  {
+    "name": "insuranceData (R package)",
+    "url": "https://cran.r-project.org/web/packages/insuranceData/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package containing insurance datasets for use in actuarial education. Includes AutoBi (automobile bodily injury claims), AutoCollision, dataCar (vehicle insurance), dataOhlsson (Swedish motorcycle insurance from Wasa), and SingaporeAuto datasets."
+  },
+  {
+    "name": "ChainLadder (R package)",
+    "url": "https://cran.r-project.org/web/packages/ChainLadder/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package implementing actuarial claims reserving methods including Mack chain-ladder, Munich chain-ladder, bootstrap, and GLM-based reserving. Contains built-in loss triangle datasets (RAA, UKMotor, GenIns, ABC, etc.)."
+  },
+  {
+    "name": "actuar (R package)",
+    "url": "https://cran.r-project.org/web/packages/actuar/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "Comprehensive R package for actuarial science providing additional probability distributions (heavy-tailed, zero-modified), aggregate claim models, credibility theory, and simulation tools. Essential for loss modeling."
+  },
+  {
+    "name": "tweedie (R package)",
+    "url": "https://cran.r-project.org/web/packages/tweedie/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package for computing Tweedie distribution densities, fitting Tweedie GLMs, and estimating the Tweedie power parameter. Critical for insurance pure premium modeling where data contains exact zeros."
+  },
+  {
+    "name": "statmod (R package)",
+    "url": "https://cran.r-project.org/web/packages/statmod/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package providing statistical modeling functions including Tweedie family for GLMs via tweedie() function, inverse Gaussian distribution support, and quasi-likelihood estimation. Underpins Tweedie GLMs in base R."
+  },
+  {
+    "name": "cplm (R package - Compound Poisson Linear Models)",
+    "url": "https://cran.r-project.org/web/packages/cplm/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package for fitting Tweedie compound Poisson linear models including GLMs, mixed models, and regularized models with L1/L2 penalties. Uses MCMC and direct maximization for parameter estimation."
+  },
+  {
+    "name": "glum (Python package - Generalized Linear Models)",
+    "url": "https://github.com/Quantco/glum",
+    "type": "html",
+    "category": "python_package",
+    "description": "Fast Python GLM library by QuantCo, successor to glmnet-python. Supports Gaussian, Poisson, Gamma, Binomial, Tweedie, and Negative Binomial families with L1/L2 regularization. Designed for large-scale insurance pricing with sparse matrix support. pip install glum."
+  },
+  {
+    "name": "glum on PyPI",
+    "url": "https://pypi.org/project/glum/",
+    "type": "html",
+    "category": "python_package",
+    "description": "PyPI page for glum - high-performance regularized GLMs. Drop-in replacement for sklearn's GLM estimators with better performance and more features (offsets, sample weights, regularization paths)."
+  },
+  {
+    "name": "chainladder-python",
+    "url": "https://github.com/casact/chainladder-python",
+    "type": "html",
+    "category": "python_package",
+    "description": "Python package for actuarial claims reserving. Implements chain-ladder, Bornhuetter-Ferguson, Cape Cod, and GLM-based reserving methods. Includes built-in sample loss triangle datasets. pip install chainladder."
+  },
+  {
+    "name": "chainladder on PyPI",
+    "url": "https://pypi.org/project/chainladder/",
+    "type": "html",
+    "category": "python_package",
+    "description": "PyPI page for chainladder - actuarial reserving in Python. Pandas-like API for working with loss development triangles and applying reserving methods."
+  },
+  {
+    "name": "scikit-learn TweedieRegressor",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "Built-in scikit-learn GLM supporting Tweedie family distributions (Gaussian, Poisson, Gamma, Inverse Gaussian, and compound Poisson-Gamma). Supports sample weights and L2 regularization. Native in sklearn since v0.23."
+  },
+  {
+    "name": "scikit-learn PoissonRegressor",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.PoissonRegressor.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "scikit-learn Poisson regression GLM for count data (e.g., claim frequency modeling). Uses log link function. Available since sklearn 0.23."
+  },
+  {
+    "name": "scikit-learn GammaRegressor",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.GammaRegressor.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "scikit-learn Gamma regression GLM for positive continuous data (e.g., claim severity modeling). Uses log link. Available since sklearn 0.23."
+  },
+  {
+    "name": "statsmodels GLM",
+    "url": "https://www.statsmodels.org/stable/glm.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "Comprehensive GLM implementation in statsmodels supporting all exponential family distributions (Gaussian, Binomial, Poisson, Gamma, Inverse Gaussian, Negative Binomial, Tweedie). Provides deviance, AIC, and detailed summary statistics. pip install statsmodels."
+  },
+  {
+    "name": "ActuarialDataScience (GitHub repo by JSchelldorfer)",
+    "url": "https://github.com/JSchelldorfer/ActuarialDataScience",
+    "type": "html",
+    "category": "github",
+    "description": "Code repository accompanying the Swiss Association of Actuaries 'Actuarial Data Science' tutorials. Contains R and Python code for GLMs, neural networks, and machine learning applied to insurance data including freMTPL datasets."
+  },
+  {
+    "name": "Modern Actuarial Models (GitHub by JSchelldorfer)",
+    "url": "https://github.com/JSchelldorfer/DeepLearningWithActuarialApplications",
+    "type": "html",
+    "category": "github",
+    "description": "R and Python code for deep learning with actuarial applications. Benchmarks neural networks against GLMs on insurance pricing data (freMTPL2). From the paper by Noll, Salzmann, and Wuthrich."
+  },
+  {
+    "name": "kasaai/insurancerating (R package)",
+    "url": "https://github.com/kasaai/insurancerating",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package for building insurance rating models. Provides tools for GLM-based pricing including model refinement, smoothing, and creating rating factors from GLM output. Built on top of base R glm()."
+  },
+  {
+    "name": "kasaai/deeptriangle",
+    "url": "https://github.com/kasaai/deeptriangle",
+    "type": "html",
+    "category": "github",
+    "description": "Deep learning approach to loss reserving by Kuo (2019). Compares neural network claims reserving against traditional GLM/chain-ladder methods. Includes Schedule P insurance triangle data."
+  },
+  {
+    "name": "kasaai/simulationmachine",
+    "url": "https://github.com/kasaai/simulationmachine",
+    "type": "html",
+    "category": "github",
+    "description": "R package for simulating realistic insurance policy and claims datasets. Generates synthetic motor insurance data with customizable parameters for frequency and severity distributions."
+  },
+  {
+    "name": "dutangc/CASdatasets (source repo)",
+    "url": "https://github.com/dutangc/CASdatasets",
+    "type": "html",
+    "category": "github",
+    "description": "Source GitHub repository for the CASdatasets R package maintained by Christophe Dutang. Contains the raw data files and package source for all CAS actuarial datasets."
+  },
+  {
+    "name": "Swedish Motorcycle Insurance (dataCar/dataOhlsson)",
+    "url": "https://cran.r-project.org/web/packages/insuranceData/index.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Swedish motorcycle/vehicle insurance data by Ohlsson and Johansson, available in the insuranceData R package as dataOhlsson. Contains exposure, claims count, and vehicle/geographic risk factors. Classic GLM teaching dataset."
+  },
+  {
+    "name": "UCI Automobile Dataset",
+    "url": "https://archive.ics.uci.edu/dataset/10/automobile",
+    "type": "html",
+    "category": "dataset",
+    "description": "UCI ML Repository automobile dataset with 26 attributes including insurance risk rating (symboling), normalized losses, and vehicle specifications. 205 instances. Can be used for insurance risk classification."
+  },
+  {
+    "name": "OpenML freMTPL2freq",
+    "url": "https://www.openml.org/search?type=data&status=active&id=41214",
+    "type": "html",
+    "category": "dataset",
+    "description": "French motor TPL frequency dataset on OpenML platform. 678,013 instances with 12 features. Directly loadable via sklearn.datasets.fetch_openml(data_id=41214)."
+  },
+  {
+    "name": "OpenML freMTPL2sev",
+    "url": "https://www.openml.org/search?type=data&status=active&id=41215",
+    "type": "html",
+    "category": "dataset",
+    "description": "French motor TPL severity dataset on OpenML platform. Contains claim amounts paired with policy IDs. Loadable via sklearn.datasets.fetch_openml(data_id=41215)."
+  },
+  {
+    "name": "Wuthrich & Buser - Non-Life Insurance Pricing with GLMs",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2870308",
+    "type": "pdf",
+    "category": "github",
+    "description": "Technical paper by Mario Wuthrich on insurance pricing with GLMs using the freMTPL2 dataset. Provides mathematical framework and R code for Poisson frequency, Gamma severity, and Tweedie pure premium models."
+  },
+  {
+    "name": "Noll, Salzmann, Wuthrich - Case Study: French Motor Third-Party Liability Claims",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3164764",
+    "type": "pdf",
+    "category": "github",
+    "description": "Benchmark paper comparing GLMs to neural networks for insurance pricing on freMTPL2 data. Establishes standard GLM baselines (Poisson, Gamma) and evaluates deep learning alternatives."
+  },
+  {
+    "name": "h2o AutoML for Insurance",
+    "url": "https://github.com/h2oai/h2o-3",
+    "type": "html",
+    "category": "python_package",
+    "description": "H2O machine learning platform supporting GLMs with Tweedie, Poisson, and Gamma families at scale. Includes AutoML for automatic model selection. Widely used in insurance for large-scale pricing. pip install h2o."
+  },
+  {
+    "name": "lightgbm (with Tweedie objective)",
+    "url": "https://lightgbm.readthedocs.io/en/latest/Parameters.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "LightGBM gradient boosting library supports Tweedie regression (objective=tweedie), Poisson regression, and Gamma regression objectives. Common in insurance for non-linear pricing models benchmarked against GLMs."
+  },
+  {
+    "name": "xgboost (with Tweedie objective)",
+    "url": "https://xgboost.readthedocs.io/en/latest/parameter.html",
+    "type": "html",
+    "category": "python_package",
+    "description": "XGBoost supports tweedie regression (objective=reg:tweedie), Poisson (count:poisson), and Gamma objectives. Used in insurance pricing as a GLM alternative with tree-based non-linear effects."
+  },
+  {
+    "name": "Actuarial Loss Prediction Kaggle Competition",
+    "url": "https://www.kaggle.com/c/actuarial-loss-estimation",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition for actuarial loss estimation. Participants build models to predict insurance losses, typically starting with GLM baselines."
+  },
+  {
+    "name": "Allstate Claims Severity (Kaggle)",
+    "url": "https://www.kaggle.com/c/allstate-claims-severity",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition dataset from Allstate with 188K training rows for predicting insurance claim severity. Contains 116 categorical and 14 continuous anonymized features. Good for severity GLM modeling."
+  },
+  {
+    "name": "Porto Seguro Safe Driver Prediction (Kaggle)",
+    "url": "https://www.kaggle.com/c/porto-seguro-safe-driver-prediction",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition dataset from Porto Seguro with 595K training rows for predicting probability of auto insurance claim. Contains 57 anonymized features (binary, categorical, continuous, ordinal). Good for frequency GLM modeling."
+  },
+  {
+    "name": "Liberty Mutual Group Property Inspection (Kaggle)",
+    "url": "https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition for predicting property inspection hazard scores for insurance. Contains anonymized features for property risk assessment."
+  },
+  {
+    "name": "Prudential Life Insurance Assessment (Kaggle)",
+    "url": "https://www.kaggle.com/c/prudential-life-insurance-assessment",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition for predicting life insurance risk classification. 59K training rows with 128 features including medical history, family history, and demographics."
+  },
+  {
+    "name": "formulaic (Python package)",
+    "url": "https://github.com/matthewwardrop/formulaic",
+    "type": "html",
+    "category": "python_package",
+    "description": "Python package implementing Wilkinson formulas (R-style model formulas like 'y ~ x1 + x2 * x3') for design matrix generation. Essential for specifying GLM models in Python in the same way actuaries use R formulas."
+  },
+  {
+    "name": "patsy (Python package)",
+    "url": "https://github.com/pydata/patsy",
+    "type": "html",
+    "category": "python_package",
+    "description": "Python package for describing and building design matrices using R-like formula syntax. Used with statsmodels for specifying GLM model formulas. pip install patsy."
+  },
+  {
+    "name": "MASS R package (glm.nb for Negative Binomial)",
+    "url": "https://cran.r-project.org/web/packages/MASS/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package providing glm.nb() for negative binomial GLMs, commonly used for overdispersed claim frequency data. Also contains the Insurance dataset (Swedish third-party motor insurance) from the book 'Modern Applied Statistics with S'."
+  },
+  {
+    "name": "MASS::Insurance dataset (Swedish Third-Party Motor Insurance)",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/MASS/html/Insurance.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Classic Swedish third-party motor insurance dataset from Hallin & Ingenbleek (1983), included in R's MASS package. Contains claims counts and claim costs cross-classified by district, car group, and age group. A standard GLM teaching dataset."
+  },
+  {
+    "name": "datasets::Titanic and base R datasets for GLM",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Base R includes several datasets useful for GLM teaching including the UCBAdmissions and esoph datasets for logistic regression, and the quine dataset for count models."
+  },
+  {
+    "name": "LocalGLMnet (GitHub by JSchelldorfer)",
+    "url": "https://github.com/JSchelldorfer/LocalGLMnet",
+    "type": "html",
+    "category": "github",
+    "description": "Implementation of LocalGLMnet - a neural network architecture that extends GLMs by learning local coefficients. Applied to insurance pricing on freMTPL2 data. Bridges GLM interpretability with neural network flexibility."
+  },
+  {
+    "name": "triplot (R package for GLM diagnostics)",
+    "url": "https://cran.r-project.org/web/packages/insurancerating/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "insurancerating R package on CRAN for building insurance pricing models. Provides GLM fitting helpers, model visualization, risk factor plotting, and tools for constructing insurance tariffs from GLM output."
+  },
+  {
+    "name": "Actuaries Institute Data Analytics Working Party Datasets",
+    "url": "https://www.actuaries.org.uk/learn-and-develop/research-and-knowledge",
+    "type": "html",
+    "category": "dataset",
+    "description": "The Institute and Faculty of Actuaries provides research resources and working party outputs with datasets and case studies for actuarial modeling."
+  },
+  {
+    "name": "scikit-glm (Python package)",
+    "url": "https://pypi.org/project/scikit-glm/",
+    "type": "html",
+    "category": "python_package",
+    "description": "Python package providing scikit-learn compatible GLM estimators. Extends sklearn's built-in GLMs with additional features."
+  },
+  {
+    "name": "Synthetic General Insurance Pricing Dataset (Kaggle by Amir Kayvanjoo)",
+    "url": "https://www.kaggle.com/datasets/amirhosseinkayvanjoo/synthetic-general-insurance-pricing-dataset",
+    "type": "html",
+    "category": "dataset",
+    "description": "Synthetic insurance pricing dataset designed for actuarial GLM modeling practice. Contains policyholder and vehicle features with claim frequency and severity targets."
+  },
+  {
+    "name": "Belgian Motor TPL (beMTPL) in CASdatasets",
+    "url": "https://cran.r-project.org/web/packages/CASdatasets/index.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Belgian motor third-party liability dataset included in the CASdatasets R package. Contains exposure, claim counts, and risk factors for Belgian policyholders. Alternative to freMTPL for European insurance data."
+  },
+  {
+    "name": "Norwegian Motor TPL (noMTPL) in CASdatasets",
+    "url": "https://cran.r-project.org/web/packages/CASdatasets/index.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Norwegian motor third-party liability dataset in CASdatasets R package. Contains Norwegian insurance data with claim frequency and severity for GLM pricing."
+  },
+  {
+    "name": "Australian Automobile Bodily Injury (ausautoBI) in CASdatasets",
+    "url": "https://cran.r-project.org/web/packages/CASdatasets/index.html",
+    "type": "html",
+    "category": "dataset",
+    "description": "Australian automobile bodily injury claims dataset in CASdatasets. Contains claim amounts and settlement details for Australian auto insurance claims."
+  },
+  {
+    "name": "Computational Actuarial Science with R (Book/Code)",
+    "url": "https://github.com/cran/CASdatasets",
+    "type": "html",
+    "category": "github",
+    "description": "CRAN mirror of CASdatasets package on GitHub. Contains all source data files for the actuarial datasets used in 'Computational Actuarial Science with R' edited by Arthur Charpentier."
+  },
+  {
+    "name": "R fitdistrplus package",
+    "url": "https://cran.r-project.org/web/packages/fitdistrplus/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "R package for fitting univariate distributions to censored or non-censored data. Essential for selecting the appropriate GLM family (Gamma, Lognormal, Weibull, Pareto) for insurance severity data."
+  },
+  {
+    "name": "Schedule P Loss Triangle Data (CAS)",
+    "url": "https://www.casact.org/publications-research/research/research-resources/loss-reserving-data-pulled-naic-schedule-p",
+    "type": "html",
+    "category": "dataset",
+    "description": "Loss reserving triangles from NAIC Schedule P filings, maintained by the Casualty Actuarial Society. Contains historical loss development data across multiple lines of business for hundreds of US insurers."
+  },
+  {
+    "name": "Wuthrich & Merz - Statistical Foundations of Actuarial Learning and its Applications",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3822407",
+    "type": "pdf",
+    "category": "github",
+    "description": "Comprehensive textbook by Wuthrich and Merz covering GLMs, neural networks, and modern actuarial modeling. Free PDF available. Uses freMTPL2 and other insurance datasets throughout."
+  },
+  {
+    "name": "Charpentier - Computational Actuarial Science with R",
+    "url": "https://github.com/cran/CASdatasets",
+    "type": "html",
+    "category": "github",
+    "description": "Companion code and data for the textbook 'Computational Actuarial Science with R'. Covers GLMs, credibility theory, loss distributions, and reserving with full R implementations."
+  },
+  {
+    "name": "pyclaim (Python actuarial package)",
+    "url": "https://pypi.org/project/pyclaim/",
+    "type": "html",
+    "category": "python_package",
+    "description": "Python package for actuarial claims modeling including frequency-severity models and aggregate loss distributions."
+  },
+  {
+    "name": "doubleml (Python/R package)",
+    "url": "https://github.com/DoubleML/doubleml-for-py",
+    "type": "html",
+    "category": "python_package",
+    "description": "Double/debiased machine learning package. Used in insurance for causal inference in pricing, extending GLM-based approaches with machine learning nuisance parameters."
+  },
+  {
+    "name": "Home Credit Default Risk (Kaggle)",
+    "url": "https://www.kaggle.com/c/home-credit-default-risk",
+    "type": "html",
+    "category": "dataset",
+    "description": "Large Kaggle credit/insurance dataset with 307K applications. Contains bureau, credit card, and previous application data. While focused on credit, the loss modeling techniques (logistic GLM) transfer directly to insurance."
+  },
+  {
+    "name": "Travelers Insurance Claim Prediction (Kaggle)",
+    "url": "https://www.kaggle.com/c/travelers-modeling-competition",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle competition from Travelers Insurance for predicting insurance claim amounts. Contains policyholder and risk features."
+  },
+  {
+    "name": "actuaryr (R package)",
+    "url": "https://cran.r-project.org/web/packages/actuar/index.html",
+    "type": "html",
+    "category": "r_package",
+    "description": "The actuar package provides additional distributions for heavy-tailed claims (Pareto, Burr, log-logistic, phase-type), credibility models (Buhlmann, Buhlmann-Straub), and aggregate claim computation tools."
+  },
+  {
+    "name": "AggregateClaimsMethods (GitHub)",
+    "url": "https://github.com/vigou3/actuar",
+    "type": "html",
+    "category": "github",
+    "description": "Source repository for the actuar R package by Vincent Goulet. Contains implementations of loss distributions, credibility theory, and risk theory methods for actuarial applications."
+  }
+]

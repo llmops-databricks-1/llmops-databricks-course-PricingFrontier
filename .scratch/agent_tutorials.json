@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Poisson regression and non-normal loss (scikit-learn)",
+    "url": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_poisson_regression_non_normal_loss.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Scikit-learn tutorial demonstrating log-linear Poisson regression for insurance claim frequency prediction using the French Motor TPL dataset. Compares Ridge, PoissonRegressor, and HistGradientBoosting with Poisson loss. Verified working."
+  },
+  {
+    "name": "Tweedie regression on insurance claims (scikit-learn)",
+    "url": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_tweedie_regression_insurance_claims.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Scikit-learn tutorial showing Poisson, Gamma, and Tweedie regression on French Motor TPL claims. Covers two-step frequency-severity product model vs single Tweedie model for pure premium estimation. Verified working."
+  },
+  {
+    "name": "Generalized Linear Models - scikit-learn User Guide",
+    "url": "https://scikit-learn.org/stable/modules/linear_model.html#generalized-linear-models",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Official scikit-learn documentation covering GLM theory, supported distributions (Normal, Poisson, Gamma, Inverse Gaussian, Tweedie), TweedieRegressor API, and link functions. Verified working."
+  },
+  {
+    "name": "French Motor Claims Datasets freMTPL2freq (Kaggle)",
+    "url": "https://www.kaggle.com/datasets/floser/french-motor-claims-datasets-fremtpl2freq",
+    "type": "html",
+    "category": "dataset",
+    "description": "Kaggle dataset with 677,991 French motor third-party liability policies. Features include driver age, vehicle characteristics, bonus-malus, region. Standard benchmark for insurance GLM tutorials. Verified working."
+  },
+  {
+    "name": "CAS Monograph: Generalized Linear Models for Insurance Ratemaking",
+    "url": "https://www.casact.org/monograph/generalized-linear-models-insurance-ratemaking",
+    "type": "html",
+    "category": "course",
+    "description": "Comprehensive CAS monograph by Goldburd, Khare, and Tevet covering GLMs specifically for P&C insurance ratemaking. Covers model building, variable selection, diagnostics, and practical implementation. Canonical actuarial reference."
+  },
+  {
+    "name": "Loss Data Analytics - Open Actuarial Textbook (GLM Chapters)",
+    "url": "https://openacttexts.github.io/Loss-Data-Analytics/",
+    "type": "html",
+    "category": "course",
+    "description": "Free open-source actuarial textbook with chapters on GLMs for frequency and severity modeling, including Poisson regression, Gamma regression, and model selection. Interactive R examples throughout."
+  },
+  {
+    "name": "Freakonometrics - Arthur Charpentier's Blog (GLM tag)",
+    "url": "https://freakonometrics.hypotheses.org/tag/glm",
+    "type": "html",
+    "category": "blog",
+    "description": "Blog posts by Arthur Charpentier (professor of actuarial science) covering GLMs, Poisson regression, overdispersion, Tweedie models, and insurance pricing with R examples."
+  },
+  {
+    "name": "statsmodels GLM Documentation",
+    "url": "https://www.statsmodels.org/stable/glm.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Official statsmodels documentation for Generalized Linear Models in Python. Covers families (Gaussian, Binomial, Poisson, Gamma, Tweedie, etc.), link functions, and model fitting with examples."
+  },
+  {
+    "name": "An Introduction to Statistical Learning (ISLR) - Chapter on GLMs",
+    "url": "https://www.statlearning.com/",
+    "type": "html",
+    "category": "course",
+    "description": "Free textbook by James, Witten, Hastie, and Tibshirani. Chapter 4 covers GLMs including logistic regression and Poisson regression with R labs. Widely used in actuarial education."
+  },
+  {
+    "name": "Predictive Modeling Applications in Actuarial Science (Frees, Derrig, Meyers)",
+    "url": "https://instruction.bus.wisc.edu/jfrees/jfreesbooks/PredictiveModelingVol1/",
+    "type": "html",
+    "category": "course",
+    "description": "Online companion to the Cambridge University Press textbook on predictive modeling in actuarial science. Volume 1 covers GLMs for insurance data with R code and datasets."
+  },
+  {
+    "name": "Computational Actuarial Science with R (Chapter on GLMs)",
+    "url": "https://link.springer.com/book/10.1007/978-3-030-25820-7",
+    "type": "html",
+    "category": "course",
+    "description": "Book edited by Arthur Charpentier with dedicated chapters on GLMs for non-life insurance pricing, including Poisson, negative binomial, Gamma, and Tweedie regression in R."
+  },
+  {
+    "name": "Pricing Game Datasets (R package CASdatasets)",
+    "url": "https://cran.r-project.org/package=CASdatasets",
+    "type": "html",
+    "category": "dataset",
+    "description": "R package by Dutang and Charpentier containing standard actuarial datasets (freMTPL, workercomp, etc.) commonly used in GLM insurance pricing tutorials and competitions."
+  },
+  {
+    "name": "GLM Practitioner's Guide - Institute and Faculty of Actuaries",
+    "url": "https://www.actuaries.org.uk/learn-and-develop/continuous-professional-development/glm-for-practitioners",
+    "type": "html",
+    "category": "course",
+    "description": "IFoA resource for actuaries covering practical aspects of GLM implementation in insurance pricing, including model selection, validation, and regulatory considerations."
+  },
+  {
+    "name": "Tweedie Distribution Tutorial (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Tweedie_distribution",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Comprehensive reference on the Tweedie distribution family, including the compound Poisson-Gamma special case (power 1-2) used in insurance pure premium modeling."
+  },
+  {
+    "name": "sklearn PoissonRegressor API Reference",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.PoissonRegressor.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "API documentation for scikit-learn's PoissonRegressor with parameters, examples, and links to related GLM estimators (GammaRegressor, TweedieRegressor)."
+  },
+  {
+    "name": "sklearn TweedieRegressor API Reference",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.TweedieRegressor.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "API documentation for scikit-learn's TweedieRegressor covering the power parameter (0=Normal, 1=Poisson, 1-2=Compound Poisson-Gamma, 2=Gamma, 3=Inverse Gaussian)."
+  },
+  {
+    "name": "sklearn GammaRegressor API Reference",
+    "url": "https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.GammaRegressor.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "API documentation for scikit-learn's GammaRegressor, used for modeling strictly positive continuous targets like insurance claim severity."
+  },
+  {
+    "name": "R glm() Function Documentation",
+    "url": "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Official R documentation for the glm() function covering family specifications (gaussian, binomial, poisson, Gamma, inverse.gaussian, quasi), link functions, and fitting options."
+  },
+  {
+    "name": "CRAN Task View: Actuarial Science",
+    "url": "https://cran.r-project.org/web/views/ActuarialScience.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Curated list of R packages relevant to actuarial science, including GLM-related packages for pricing (statmod, tweedie, MASS), loss reserving, and ratemaking."
+  },
+  {
+    "name": "R tweedie Package",
+    "url": "https://cran.r-project.org/package=tweedie",
+    "type": "html",
+    "category": "tutorial",
+    "description": "R package by Peter Dunn for Tweedie exponential family models. Provides density, distribution, and quantile functions for the Tweedie distribution used in insurance pricing."
+  },
+  {
+    "name": "Actuarial Data Science Tutorials (Swiss Association of Actuaries)",
+    "url": "https://actuarialdatascience.org/",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Collection of tutorials from the Swiss Association of Actuaries covering machine learning and GLMs in insurance, including frequency-severity modeling and neural network extensions of GLMs."
+  },
+  {
+    "name": "Mario Wuthrich - Statistical Foundations of Actuarial Learning and its Applications",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3822407",
+    "type": "html",
+    "category": "course",
+    "description": "Comprehensive open-access textbook by Mario Wuthrich covering GLMs, neural networks, and modern actuarial pricing methods. Includes Poisson, Gamma, and Tweedie GLMs with R code."
+  },
+  {
+    "name": "French Motor Third-Party Liability (freMTPL) Tutorial by Lorentzen and Mayer",
+    "url": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_tweedie_regression_insurance_claims.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "The scikit-learn Tweedie tutorial was inspired by an R tutorial by Lorentzen and Mayer demonstrating frequency-severity decomposition on the freMTPL2 dataset."
+  },
+  {
+    "name": "Databricks Insurance Lakehouse Solution Accelerator",
+    "url": "https://www.databricks.com/solutions/accelerators/insurance-qa-using-nlp",
+    "type": "html",
+    "category": "tutorial",
+    "description": "Databricks solution accelerator for insurance analytics, demonstrating how to build pricing models including GLMs on the Databricks platform with PySpark and MLflow."
+  },
+  {
+    "name": "h2o GLM Documentation for Insurance",
+    "url": "https://docs.h2o.ai/h2o/latest-stable/h2o-docs/data-science/glm.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "H2O.ai documentation for their distributed GLM implementation supporting Tweedie, Poisson, and Gamma families. Includes insurance pricing examples and parameter tuning guidance."
+  },
+  {
+    "name": "Noll, Salzmann, Wuthrich - Case Study: French Motor Third-Party Liability Claims",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3164764",
+    "type": "html",
+    "category": "blog",
+    "description": "Influential paper comparing classical actuarial GLMs with machine learning methods on the French MTPL dataset. Demonstrates Poisson and Gamma GLMs as baselines, with neural network and boosting extensions."
+  },
+  {
+    "name": "Insurance Pricing with GLMs - Towards Data Science / Medium",
+    "url": "https://towardsdatascience.com/tagged/insurance",
+    "type": "html",
+    "category": "blog",
+    "description": "Collection of Medium/TDS articles on insurance analytics including GLM-based pricing, frequency-severity modeling, and Tweedie regression tutorials in Python."
+  },
+  {
+    "name": "Practical Introduction to Frequency-Severity Models",
+    "url": "https://www.casact.org/sites/default/files/2021-02/pubs_monographs_Goldburd_Khare_Tevet_generalized-linear-models.pdf",
+    "type": "pdf",
+    "category": "course",
+    "description": "CAS Monograph 5 PDF - comprehensive guide to GLMs for insurance ratemaking covering frequency models (Poisson, negative binomial), severity models (Gamma, log-normal), and pure premium (Tweedie)."
+  },
+  {
+    "name": "Jed Frees - Regression Modeling with Actuarial and Financial Applications (GLM Chapter)",
+    "url": "https://instruction.bus.wisc.edu/jfrees/jfreesbooks/Regression%20Modeling/BookWebDec2010/GLMChapter.pdf",
+    "type": "pdf",
+    "category": "course",
+    "description": "Free PDF chapter on GLMs from Jed Frees' regression modeling textbook, covering exponential family distributions, link functions, deviance, and actuarial applications."
+  },
+  {
+    "name": "IFoA - Generalized Linear Models: An Introduction",
+    "url": "https://actuaries.org.uk/media/qemdewmk/glms-an-introduction.pdf",
+    "type": "pdf",
+    "category": "course",
+    "description": "Institute and Faculty of Actuaries introductory guide to GLMs covering theory, practical implementation, model diagnostics, and insurance pricing applications."
+  },
+  {
+    "name": "Wuthrich and Buser - Data Analytics for Non-Life Insurance Pricing",
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2870308",
+    "type": "html",
+    "category": "course",
+    "description": "Open-access lecture notes covering GLMs for non-life insurance pricing including Poisson, negative binomial, and Gamma regression with Swiss motor insurance data."
+  },
+  {
+    "name": "OpenML French MTPL2 Dataset (freMTPL2freq)",
+    "url": "https://www.openml.org/search?type=data&id=41214",
+    "type": "html",
+    "category": "dataset",
+    "description": "The French Motor Third-Party Liability frequency dataset on OpenML, used by scikit-learn GLM tutorials. Contains 677,991 policies with claim counts and risk features."
+  },
+  {
+    "name": "xgboost for Insurance Pricing - Comparison with GLM",
+    "url": "https://cran.r-project.org/web/packages/insurancerating/vignettes/insurancerating.html",
+    "type": "html",
+    "category": "tutorial",
+    "description": "R insurancerating package vignette demonstrating GLM-based insurance pricing workflows including rating factors, burning cost analysis, and comparison with tree-based models."
+  },
+  {
+    "name": "statmod R Package - Tweedie GLM Extensions",
+    "url": "https://cran.r-project.org/package=statmod",
+    "type": "html",
+    "category": "tutorial",
+    "description": "R package providing Tweedie family for glm(), power variance functions, and other statistical modeling tools commonly used in actuarial GLM work."
+  },
+  {
+    "name": "Coursera: Predictive Modeling and Machine Learning in Actuarial Science",
+    "url": "https://www.coursera.org/learn/actuarial-science-predictive-modelling",
+    "type": "html",
+    "category": "course",
+    "description": "Online course covering GLMs and machine learning methods for actuarial applications, including Poisson and Gamma regression for insurance pricing."
+  }
+]

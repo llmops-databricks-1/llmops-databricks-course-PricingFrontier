@@ -1,5 +1,5 @@
 bundle:
-  name: llmops-databricks-course-PricingFrontier
+  name: glam
 
 include:
   - resources/*.yml
@@ -20,5 +20,5 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://<your-databricks-workspace>
+      host: https://adb-7405616207591231.11.azuredatabricks.net/
       root_path: /Workspace/Users/${workspace.current_user.userName}/.bundle/${bundle.name}/${bundle.target}
